@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true, // ⬅️ RECOMMENDED CHANGE: Set to true
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "bundler", // ⬅️ RECOMMENDED CHANGE: Set to "bundler"
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "tsx": "react-tsx",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

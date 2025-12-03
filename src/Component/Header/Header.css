@@ -1,0 +1,124 @@
+header {
+  height: 100vh;
+  padding-top: .5rem;
+  overflow: hidden;
+}
+.header__container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+/* ====cta====== */
+
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* =====social====== */
+.header__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 0;
+  bottom: 5rem;
+}
+.header__social::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background-color: var(--color-primary);
+}
+
+/* =====me====== */
+
+.me {
+  background: linear-gradient(var(--color-primary), transparent);
+  width: 22rem;
+  height: 30rem;
+  position: absolute;
+  margin-top: 2rem;
+  left: calc(50% - 11rem);
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  padding: 5rem 1.5rem 1.5rem 1.5rem;
+  align-items: center;
+}
+
+/* =====scroll down====== */
+
+.scroll__down {
+  position: absolute;
+  right: -2.3rem;
+  bottom: 10rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* #=======Media Query======[Medium Devices]# */
+
+@media Screen and (max-width:1024px){
+.container,.header__container{
+    width: var(--cotainer-width-md);
+  }
+     .header__social,.scroll__down{
+    display: none ;
+  }
+ 
+}
+ 
+/* #=======Media Query======[Small Devices]# */
+
+@media Screen and (max-width: 600px) {
+  .container,.header__container{
+    width: var(--cotainer-width-sm);
+  }
+  .header__social,.scroll__down {
+    display: none;
+  }
+
+}
+
+
+/* 1792x828px at 326ppi */
+/* 
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px) 
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    header{
+      height: 130vh;
+    }
+}
+  
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 896px) 
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    header{
+      height: 100vh;
+    }
+  }
+@media only screen and (max-device-width: 319px) {
+  header{
+    height:100vh;
+  }
+  
+}
+@media only screen 
+  and (min-device-width: 360px) 
+  and (max-device-width: 1080px) 
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+   header{
+    height: 130vh;
+   }
+} */
