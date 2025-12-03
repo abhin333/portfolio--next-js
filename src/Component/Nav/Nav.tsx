@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import "./Nav.css";
+import './Nav.css';
 
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiMessageSquareDetail, BiBook } from "react-icons/bi";

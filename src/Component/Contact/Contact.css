@@ -53,6 +53,7 @@ input,textarea{
 
 
 
+
 /* #=======Media Query======[Medium Devices]# */
 
 @media Screen and (max-width:1024px){
@@ -82,3 +83,4 @@ input,textarea{
 }
  
 }
+

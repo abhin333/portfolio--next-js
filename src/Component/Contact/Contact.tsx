@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useRef } from "react";
-import "./Contact.css";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { RiWhatsappFill } from "react-icons/ri";
 import { BsLinkedin } from "react-icons/bs";
 import emailjs from "emailjs-com";
+import "./Contact.css";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);

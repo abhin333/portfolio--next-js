@@ -1,77 +1,205 @@
-"use client"; // ⬅️ Required for client-side functionality
+import Image from "next/image";
+import './Portfolio.css';
 
-import React from 'react';
-import Image from 'next/image'; // ⬅️ Next.js optimized Image component
-import styles from './Portfolio.module.css'; // ⬅️ Import CSS Modules
-interface PortfolioItem {
-  id: number;
-  imageSrc: any; // Using 'any' for imported image module stability
-  title: string;
-  github: string;
-  demo: string;
-}
+import IMG1 from "../../../public/assets/portfolio1.jpg";
+import IMG2 from "../../../public/assets/portfolio2.png";
+import IMG3 from "../../../public/assets/portfolio3.png";
+import IMG4 from "../../../public/assets/portfolio4.jpg";
+import IMG5 from "../../../public/assets/portfolio5.jpg";
+import IMG6 from "../../../public/assets/movie-logo.jpg";
 
-import IMG1 from "/public/assets/portfolio1.jpg";
-import IMG2 from "/public/assets/portfolio2.png";
-import IMG3 from "/public/assets/portfolio3.png";
-import IMG4 from "/public/assets/portfolio4.jpg";
-import IMG5 from "/public/assets/portfolio5.jpg";
-import IMG6 from "/public/assets/movie-logo.jpg";
-
-const portfolioData: PortfolioItem[] = [
-  { id: 1, imageSrc: IMG2, title: "Easy Food [Mobile view only] MERN", github: "https://github.com/abhin333/easy-foode-node", demo: "https://easy-fastfood.netlify.app" },
-  { id: 2, imageSrc: IMG2, title: "Easy Food [Mobile view only] React js & Firebase", github: "https://github.com/abhin333/Easy_Food.git", demo: "https://easy-food-123.netlify.app/" },
-  { id: 3, imageSrc: IMG3, title: "Olx Clone", github: "https://github.com/abhin333/olx.git", demo: "https://olx-clone-e55a9.web.app/" },
-  { id: 4, imageSrc: IMG4, title: "Netflix Clone", github: "https://github.com/abhin333/Netflix.git", demo: "https://netflixsnew.netlify.app/" },
-  { id: 5, imageSrc: IMG6, title: "Movie App", github: "https://github.com/abhin333/movies", demo: "https://moviesnew.netlify.app/" },
-  { id: 6, imageSrc: IMG1, title: "Books and stationary", github: "https://github.com/abhin333", demo: "https://books-stationery-4f20c4.netlify.app/" },
-  { id: 7, imageSrc: IMG5, title: "Abhin portfolio", github: "https://github.com/abhin333/fb.git", demo: "https://abhin333.github.io/abhin/" },
-];
-
-const Portfolio: React.FC = () => {
+const Portfolio = () => {
   return (
-    <section id="portfolio">
-      <h5>My Recent Work</h5>
-      <h2>Portfolio</h2> 
+    <>
+      <section id="portfolio">
+        <h5>My Recent Work</h5>
+        <h2>Portfolio</h2>
 
-      <div className={styles.portfolio__container}>
-
-        {portfolioData.map(({ id, imageSrc, title, github, demo }) => (
-          <article key={id} className={styles.portfolio__item}>
-            <div className={styles['portfolio__item-image']}>
-              <Image 
-                src={imageSrc} 
-                alt={title}
-                width={400} // Set appropriate size
-                height={300} // Set appropriate size
-                layout="responsive" // Optional: makes image scale with parent
-                objectFit="cover" // Optional: ensures image covers the area
-              />
+        <div className="container portfolio__container">
+          {/* Easy Food MERN */}
+          <article className="portfolio__item">
+            <div className="portfolio__item-image">
+              <Image src={IMG2} alt="Easy Food MERN" width={400} height={300} />
             </div>
-            <h3>{title}</h3>
-            <div className={styles['portfolio__item-cta']}>
+            <h3>Easy Food [Mobile view only] MERN</h3>
+            <div className="portfolio__item-cta">
               <a
-                href={github}
-                className={styles.btn} // Use CSS Module class
+                href="https://github.com/abhin333/easy-foode-node"
+                className="btn"
                 target="_blank"
-                rel="noopener noreferrer" // Security best practice
+                rel="noopener noreferrer"
               >
                 Github
               </a>
               <a
-                href={demo}
-                className={`${styles.btn} ${styles['btn-primary']}`} // Use multiple CSS Module classes
+                href="https://easy-fastfood.netlify.app"
+                className="btn btn-primary"
                 target="_blank"
-                rel="noopener noreferrer" // Security best practice
+                rel="noopener noreferrer"
               >
                 Live Demo
               </a>
             </div>
           </article>
-        ))}
 
-      </div>
-    </section>
+          {/* Easy Food React & Firebase */}
+          <article className="portfolio__item">
+            <div className="portfolio__item-image">
+              <Image src={IMG2} alt="Easy Food React" width={400} height={300} />
+            </div>
+            <h3>Easy Food [Mobile view only] React js & Firebase</h3>
+            <div className="portfolio__item-cta">
+              <a
+                href="https://github.com/abhin333/Easy_Food.git"
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+              <a
+                href="https://easy-food-123.netlify.app/"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </div>
+          </article>
+
+          {/* OLX Clone */}
+          <article className="portfolio__item">
+            <div className="portfolio__item-image">
+              <Image src={IMG3} alt="OLX Clone" width={400} height={300} />
+            </div>
+            <h3>OLX Clone</h3>
+            <div className="portfolio__item-cta">
+              <a
+                href="https://github.com/abhin333/olx.git"
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+              <a
+                href="https://olx-clone-e55a9.web.app/"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </div>
+          </article>
+
+          {/* Netflix Clone */}
+          <article className="portfolio__item">
+            <div className="portfolio__item-image">
+              <Image src={IMG4} alt="Netflix Clone" width={400} height={300} />
+            </div>
+            <h3>Netflix Clone</h3>
+            <div className="portfolio__item-cta">
+              <a
+                href="https://github.com/abhin333/Netflix.git"
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+              <a
+                href="https://netflixsnew.netlify.app/"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </div>
+          </article>
+
+          {/* Movie App */}
+          <article className="portfolio__item">
+            <div className="portfolio__item-image">
+              <Image src={IMG6} alt="Movie App" width={400} height={300} />
+            </div>
+            <h3>Movie App</h3>
+            <div className="portfolio__item-cta">
+              <a
+                href="https://github.com/abhin333/movies"
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+              <a
+                href="https://moviesnew.netlify.app/"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </div>
+          </article>
+
+          {/* Books & Stationery */}
+          <article className="portfolio__item">
+            <div className="portfolio__item-image">
+              <Image src={IMG1} alt="Books and Stationery" width={400} height={300} />
+            </div>
+            <h3>Books and Stationery</h3>
+            <div className="portfolio__item-cta">
+              <a
+                href="https://github.com/abhin333"
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+              <a
+                href="https://books-stationery-4f20c4.netlify.app/"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </div>
+          </article>
+
+          {/* Personal Portfolio */}
+          <article className="portfolio__item">
+            <div className="portfolio__item-image">
+              <Image src={IMG5} alt="Abhin Portfolio" width={400} height={300} />
+            </div>
+            <h3>Abhin Portfolio</h3>
+            <div className="portfolio__item-cta">
+              <a
+                href="https://github.com/abhin333/fb.git"
+                className="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </a>
+              <a
+                href="https://abhin333.github.io/abhin/"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import "./About.css";
-
-import Me from "../../assets/me-about.jpeg";
+import Me from "../../../public/assets/me-about.jpeg"
 import { FaAward, FaUsers } from "react-icons/fa";
 import { MdComputer } from "react-icons/md";
+import "./About.css";
 
 const About = () => {
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import "./Experence.css";
 import { BsFillPatchCheckFill } from "react-icons/bs";
+import "./Experence.css";
 
 const Experence = () => {
   return (

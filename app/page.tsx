@@ -12,12 +12,12 @@ export default function HomePage() {
   return (
     <>
     <Header />
-    {/* <Nav />
+    <Nav />
     <About />
     <Experence />
     <Portfolio />
     <Contact />
-    <Footer />  */}
+    <Footer /> 
     </>
   );
 }
