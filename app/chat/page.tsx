@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiX, HiPaperAirplane } from "react-icons/hi";
 import { BsChatDotsFill } from "react-icons/bs";
-import { RiRobot2Line } from "react-icons/ri";
+import { RiRobotLine } from "react-icons/ri";
 
 type Message = {
   id: string;
@@ -143,7 +143,7 @@ const ChatWidget = () => {
                   flexShrink: 0,
                 }}
               >
-                <RiRobot2Line size={20} />
+                <RiRobotLine size={20} />
               </div>
               <div style={{ flex: 1 }}>
                 <p style={{ margin: 0, fontWeight: 700, color: "#f0f9ff", fontSize: "0.95rem" }}>
@@ -200,7 +200,7 @@ const ChatWidget = () => {
                   {msg.role === "assistant" && (
                     <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.25rem" }}>
                       <div style={{ width: "20px", height: "20px", borderRadius: "6px", background: "linear-gradient(135deg, #22d3ee, #a855f7)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <RiRobot2Line size={12} color="#fff" />
+                        <RiRobotLine size={12} color="#fff" />
                       </div>
                       <span style={{ fontSize: "0.7rem", color: "#475569" }}>Assistant • {formatTime(msg.timestamp)}</span>
                     </div>
@@ -238,7 +238,7 @@ const ChatWidget = () => {
                   style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
                 >
                   <div style={{ width: "20px", height: "20px", borderRadius: "6px", background: "linear-gradient(135deg, #22d3ee, #a855f7)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <RiRobot2Line size={12} color="#fff" />
+                    <RiRobotLine size={12} color="#fff" />
                   </div>
                   <div style={{ padding: "0.6rem 0.9rem", background: "rgba(30,41,59,0.8)", border: "1px solid rgba(34,211,238,0.1)", borderRadius: "16px 16px 16px 4px", display: "flex", gap: "4px", alignItems: "center" }}>
                     {[0, 1, 2].map((i) => (

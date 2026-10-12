@@ -16,7 +16,6 @@
     "moduleResolution": "bundler", // ⬅️ RECOMMENDED CHANGE: Set to "bundler"
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "tsx": "react-tsx",
     "plugins": [
       {
         "name": "next"
