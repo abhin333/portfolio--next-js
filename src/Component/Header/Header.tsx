@@ -244,9 +244,9 @@ const Header = () => {
             lineHeight: 1.3,
           }}
         >
-          Crafting{" "}
-          <span className="gradient-text-cyan">Fast, Interactive</span> &amp;{" "}
-          <span style={{ color: "#a855f7" }}>Scalable</span> Web Experiences
+          Crafting <span className="gradient-text-cyan">Fast, Interactive</span>{" "}
+          &amp; <span style={{ color: "#a855f7" }}>Scalable</span> Web
+          Experiences
         </motion.h2>
 
         {/* Bio */}
@@ -261,9 +261,8 @@ const Header = () => {
             lineHeight: 1.8,
           }}
         >
-          Full-Stack Web Developer specializing in React, Next.js & Node.js.
-          Building performant, accessible, and beautiful digital experiences —
-          one pixel at a time.
+          Full-Stack Web Developer specializing in React, Next.js . Building
+          performant, accessible, and beautiful digital experiences.
         </motion.p>
 
         {/* Tech Badges */}

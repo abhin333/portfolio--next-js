@@ -17,9 +17,21 @@ const NAV_LINKS = [
 ];
 
 const SOCIALS = [
-  { href: "https://github.com/abhin333", icon: <FaGithub size={18} />, label: "GitHub" },
-  { href: "https://linkedin.com/in/abhin", icon: <FaLinkedinIn size={18} />, label: "LinkedIn" },
-  { href: "mailto:abhinpradeepan123@gmail.com", icon: <MdEmail size={18} />, label: "Email" },
+  {
+    href: "https://github.com/abhin333",
+    icon: <FaGithub size={18} />,
+    label: "GitHub",
+  },
+  {
+    href: "https://linkedin.com/in/abhin",
+    icon: <FaLinkedinIn size={18} />,
+    label: "LinkedIn",
+  },
+  {
+    href: "mailto:abhinpradeepan@gmail.com",
+    icon: <MdEmail size={18} />,
+    label: "Email",
+  },
 ];
 
 const Footer = () => {
@@ -43,7 +55,8 @@ const Footer = () => {
           transform: "translateX(-50%)",
           width: "600px",
           height: "200px",
-          background: "radial-gradient(ellipse at center bottom, rgba(34,211,238,0.06) 0%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse at center bottom, rgba(34,211,238,0.06) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -79,16 +92,47 @@ const Footer = () => {
               </span>
             </Link>
             <p style={{ color: "#475569", fontSize: "0.82rem", margin: 0 }}>
-              Full-Stack Web Developer
+              Web Developer
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginTop: "0.5rem" }}>
-              <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 8px #22c55e", display: "inline-block" }} />
-              <span style={{ fontSize: "0.75rem", color: "#22c55e", fontWeight: 500 }}>Available for opportunities</span>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                marginTop: "0.5rem",
+              }}
+            >
+              <span
+                style={{
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  background: "#22c55e",
+                  boxShadow: "0 0 8px #22c55e",
+                  display: "inline-block",
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  color: "#22c55e",
+                  fontWeight: 500,
+                }}
+              >
+                Available for opportunities
+              </span>
             </div>
           </div>
 
           {/* Nav Links (center) */}
-          <nav style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <nav
+            style={{
+              display: "flex",
+              gap: "1.5rem",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -100,8 +144,12 @@ const Footer = () => {
                   fontWeight: 500,
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#22d3ee")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#94a3b8")}
+                onMouseEnter={(e) =>
+                  ((e.target as HTMLElement).style.color = "#22d3ee")
+                }
+                onMouseLeave={(e) =>
+                  ((e.target as HTMLElement).style.color = "#94a3b8")
+                }
               >
                 {link.label}
               </Link>
@@ -109,7 +157,14 @@ const Footer = () => {
           </nav>
 
           {/* Social + Back to top (right) */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "1rem" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              gap: "1rem",
+            }}
+          >
             <div style={{ display: "flex", gap: "0.75rem" }}>
               {SOCIALS.map((s) => (
                 <motion.a
@@ -135,12 +190,15 @@ const Footer = () => {
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLElement).style.color = "#22d3ee";
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,211,238,0.4)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 16px rgba(34,211,238,0.2)";
+                    (e.currentTarget as HTMLElement).style.borderColor =
+                      "rgba(34,211,238,0.4)";
+                    (e.currentTarget as HTMLElement).style.boxShadow =
+                      "0 0 16px rgba(34,211,238,0.2)";
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLElement).style.color = "#94a3b8";
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,211,238,0.15)";
+                    (e.currentTarget as HTMLElement).style.borderColor =
+                      "rgba(34,211,238,0.15)";
                     (e.currentTarget as HTMLElement).style.boxShadow = "none";
                   }}
                 >
@@ -174,15 +232,35 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(34,211,238,0.2), transparent)", margin: "0 0 1.5rem" }} />
+        <div
+          style={{
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, rgba(34,211,238,0.2), transparent)",
+            margin: "0 0 1.5rem",
+          }}
+        />
 
         {/* Copyright */}
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "0.4rem" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "0.4rem",
+          }}
+        >
           <BsCodeSlash size={14} style={{ color: "#22d3ee" }} />
-          <p style={{ color: "#475569", fontSize: "0.8rem", margin: 0, textAlign: "center" }}>
-            © {new Date().getFullYear()} Abhin.v — Built with{" "}
-            <FaHeart size={10} style={{ display: "inline", color: "#ec4899", verticalAlign: "middle" }} />
-            {" "}using Next.js & Tailwind CSS
+          <p
+            style={{
+              color: "#475569",
+              fontSize: "0.8rem",
+              margin: 0,
+              textAlign: "center",
+            }}
+          >
+            © {new Date().getFullYear()} Abhin.v — Built with using Next.js &
+            Tailwind CSS
           </p>
         </div>
       </div>

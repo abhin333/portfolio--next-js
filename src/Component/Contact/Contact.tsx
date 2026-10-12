@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiPaperAirplane } from "react-icons/hi";
 import emailjs from "emailjs-com";
 
-const EMAIL = "abhinpradeepan123@gmail.com";
+const EMAIL = "abhinpradeepan@gmail.com";
 
 const SOCIAL_LINKS = [
   {
@@ -17,7 +17,7 @@ const SOCIAL_LINKS = [
     color: "#f0f9ff",
   },
   {
-    href: "https://linkedin.com/in/abhin",
+    href: "https://www.linkedin.com/in/abhin-v-974252215",
     icon: <FaLinkedinIn size={22} />,
     label: "LinkedIn",
     color: "#0ea5e9",
@@ -39,7 +39,9 @@ const SOCIAL_LINKS = [
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const [copied, setCopied] = useState(false);
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const [focused, setFocused] = useState<string | null>(null);
 
   const copyEmail = async () => {
@@ -54,15 +56,16 @@ const Contact = () => {
     setStatus("sending");
     try {
       await emailjs.sendForm(
-        "service_yqrrv2x",
+        "service_x3mflno",
         "template_qggt1zg",
         form.current,
-        "Y_HlEaixg-so_4Km8"
+        "Y_HlEaixg-so_4Km8",
       );
       setStatus("success");
-      e.currentTarget.reset();
+      form.current.reset();
       setTimeout(() => setStatus("idle"), 4000);
-    } catch {
+    } catch (error) {
+      console.error("EmailJS Error:", error);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 3000);
     }
@@ -97,8 +100,16 @@ const Contact = () => {
           <h2 className="section-title">
             Contact <span className="gradient-text">Me</span>
           </h2>
-          <p style={{ color: "#94a3b8", marginTop: "1rem", maxWidth: "450px", margin: "1rem auto 0" }}>
-            Have a project in mind or want to collaborate? I&apos;d love to hear from you.
+          <p
+            style={{
+              color: "#94a3b8",
+              marginTop: "1rem",
+              maxWidth: "450px",
+              margin: "1rem auto 0",
+            }}
+          >
+            Have a project in mind or want to collaborate? I&apos;d love to hear
+            from you.
           </p>
         </motion.div>
 
@@ -120,11 +131,15 @@ const Contact = () => {
             style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
           >
             {/* Email Copy Card */}
-            <div
-              className="glass-card"
-              style={{ padding: "2rem" }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
+            <div className="glass-card" style={{ padding: "2rem" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  marginBottom: "1rem",
+                }}
+              >
                 <div
                   style={{
                     width: "44px",
@@ -141,8 +156,14 @@ const Contact = () => {
                   <MdEmail size={22} />
                 </div>
                 <div>
-                  <p style={{ margin: 0, fontWeight: 700, color: "#f0f9ff" }}>Email</p>
-                  <p style={{ margin: 0, fontSize: "0.78rem", color: "#94a3b8" }}>Drop me a line anytime</p>
+                  <p style={{ margin: 0, fontWeight: 700, color: "#f0f9ff" }}>
+                    Email
+                  </p>
+                  <p
+                    style={{ margin: 0, fontSize: "0.78rem", color: "#94a3b8" }}
+                  >
+                    Drop me a line anytime
+                  </p>
                 </div>
               </div>
               <div
@@ -157,7 +178,14 @@ const Contact = () => {
                   gap: "0.5rem",
                 }}
               >
-                <span style={{ fontSize: "0.82rem", color: "#22d3ee", fontFamily: "'JetBrains Mono', monospace", wordBreak: "break-all" }}>
+                <span
+                  style={{
+                    fontSize: "0.82rem",
+                    color: "#22d3ee",
+                    fontFamily: "'JetBrains Mono', monospace",
+                    wordBreak: "break-all",
+                  }}
+                >
                   {EMAIL}
                 </span>
                 <motion.button
@@ -181,8 +209,22 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="glass-card" style={{ padding: "2rem" }}>
-              <p style={{ margin: "0 0 1.25rem", fontWeight: 600, color: "#f0f9ff" }}>Find Me On</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <p
+                style={{
+                  margin: "0 0 1.25rem",
+                  fontWeight: 600,
+                  color: "#f0f9ff",
+                }}
+              >
+                Find Me On
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.75rem",
+                }}
+              >
                 {SOCIAL_LINKS.map((link) => (
                   <motion.a
                     key={link.label}
@@ -206,13 +248,17 @@ const Contact = () => {
                     }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.color = link.color;
-                      (e.currentTarget as HTMLElement).style.borderColor = `${link.color}40`;
-                      (e.currentTarget as HTMLElement).style.background = `${link.color}08`;
+                      (e.currentTarget as HTMLElement).style.borderColor =
+                        `${link.color}40`;
+                      (e.currentTarget as HTMLElement).style.background =
+                        `${link.color}08`;
                     }}
                     onMouseLeave={(e) => {
                       (e.currentTarget as HTMLElement).style.color = "#94a3b8";
-                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,211,238,0.1)";
-                      (e.currentTarget as HTMLElement).style.background = "rgba(34,211,238,0.04)";
+                      (e.currentTarget as HTMLElement).style.borderColor =
+                        "rgba(34,211,238,0.1)";
+                      (e.currentTarget as HTMLElement).style.background =
+                        "rgba(34,211,238,0.04)";
                     }}
                   >
                     <span style={{ color: "inherit" }}>{link.icon}</span>
@@ -232,14 +278,45 @@ const Contact = () => {
             className="glass-card"
             style={{ padding: "2.5rem" }}
           >
-            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#f0f9ff", marginBottom: "1.75rem" }}>
+            <h3
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "1.3rem",
+                color: "#f0f9ff",
+                marginBottom: "1.75rem",
+              }}
+            >
               Send a Message
             </h3>
 
-            <form ref={form} onSubmit={sendEmail} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }} className="form-row">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.25rem",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "1rem",
+                }}
+                className="form-row"
+              >
                 <div>
-                  <label style={{ display: "block", fontSize: "0.82rem", color: "#94a3b8", marginBottom: "0.4rem", fontWeight: 500 }}>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "0.82rem",
+                      color: "#94a3b8",
+                      marginBottom: "0.4rem",
+                      fontWeight: 500,
+                    }}
+                  >
                     Full Name
                   </label>
                   <input
@@ -254,7 +331,15 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label style={{ display: "block", fontSize: "0.82rem", color: "#94a3b8", marginBottom: "0.4rem", fontWeight: 500 }}>
+                  <label
+                    style={{
+                      display: "block",
+                      fontSize: "0.82rem",
+                      color: "#94a3b8",
+                      marginBottom: "0.4rem",
+                      fontWeight: 500,
+                    }}
+                  >
                     Email Address
                   </label>
                   <input
@@ -271,7 +356,15 @@ const Contact = () => {
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: "0.82rem", color: "#94a3b8", marginBottom: "0.4rem", fontWeight: 500 }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "0.82rem",
+                    color: "#94a3b8",
+                    marginBottom: "0.4rem",
+                    fontWeight: 500,
+                  }}
+                >
                   Subject
                 </label>
                 <input
@@ -286,7 +379,15 @@ const Contact = () => {
               </div>
 
               <div>
-                <label style={{ display: "block", fontSize: "0.82rem", color: "#94a3b8", marginBottom: "0.4rem", fontWeight: 500 }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "0.82rem",
+                    color: "#94a3b8",
+                    marginBottom: "0.4rem",
+                    fontWeight: 500,
+                  }}
+                >
                   Message
                 </label>
                 <textarea
@@ -295,7 +396,11 @@ const Contact = () => {
                   placeholder="Tell me about your project..."
                   autoComplete="off"
                   required
-                  style={{ ...inputStyle("message"), resize: "vertical", minHeight: "120px" }}
+                  style={{
+                    ...inputStyle("message"),
+                    resize: "vertical",
+                    minHeight: "120px",
+                  }}
                   onFocus={() => setFocused("message")}
                   onBlur={() => setFocused(null)}
                 />
@@ -306,7 +411,15 @@ const Contact = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  style={{ padding: "0.75rem 1rem", background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", borderRadius: "8px", color: "#22c55e", fontSize: "0.9rem", fontWeight: 500 }}
+                  style={{
+                    padding: "0.75rem 1rem",
+                    background: "rgba(34,197,94,0.1)",
+                    border: "1px solid rgba(34,197,94,0.3)",
+                    borderRadius: "8px",
+                    color: "#22c55e",
+                    fontSize: "0.9rem",
+                    fontWeight: 500,
+                  }}
                 >
                   ✅ Message sent! I&apos;ll get back to you soon.
                 </motion.div>
@@ -315,7 +428,15 @@ const Contact = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  style={{ padding: "0.75rem 1rem", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: "8px", color: "#ef4444", fontSize: "0.9rem", fontWeight: 500 }}
+                  style={{
+                    padding: "0.75rem 1rem",
+                    background: "rgba(239,68,68,0.1)",
+                    border: "1px solid rgba(239,68,68,0.3)",
+                    borderRadius: "8px",
+                    color: "#ef4444",
+                    fontSize: "0.9rem",
+                    fontWeight: 500,
+                  }}
                 >
                   ❌ Oops! Something went wrong. Please try again.
                 </motion.div>
@@ -328,12 +449,18 @@ const Contact = () => {
                   whileTap={{ scale: 0.97 }}
                   disabled={status === "sending"}
                   className="btn-primary"
-                  style={{ flex: 1, justifyContent: "center", opacity: status === "sending" ? 0.7 : 1 }}
+                  style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    opacity: status === "sending" ? 0.7 : 1,
+                  }}
                 >
                   {status === "sending" ? (
                     <>⏳ Sending...</>
                   ) : (
-                    <><HiPaperAirplane size={16} /> Send Message</>
+                    <>
+                      <HiPaperAirplane size={16} /> Send Message
+                    </>
                   )}
                 </motion.button>
                 <motion.button
