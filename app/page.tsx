@@ -7,17 +7,21 @@ import Experence from "../src/Component/Experence/Experence";
 import Portfolio from "../src/Component/Portfolio/Portfolio";
 import Contact from "../src/Component/Contact/Contact";
 import Footer from "../src/Component/Footer/Footer";
+import ChatWidget from "./chat/page";
 
 export default function HomePage() {
   return (
     <>
-    <Header />
-    <Nav />
-    <About />
-    <Experence />
-    <Portfolio />
-    <Contact />
-    <Footer /> 
+      <Nav />
+      <main>
+        <Header />
+        <About />
+        <Experence />
+        <Portfolio />
+        <Contact />
+      </main>
+      <Footer />
+      <ChatWidget />
     </>
   );
 }
