@@ -12,6 +12,7 @@ import IMG4 from "../../../public/assets/portfolio4.jpg";
 import IMG6 from "../../../public/assets/movie-logo.jpg";
 import IMG1 from "../../../public/assets/portfolio1.jpg";
 import IMG5 from "../../../public/assets/portfolio5.jpg";
+import IMG7 from "../../../public/assets/chatwithabi.png";
 
 const PROJECTS = [
   {
@@ -86,25 +87,35 @@ const PROJECTS = [
     github: "https://github.com/abhin333/fb.git",
     demo: "https://abhin333.github.io/abhin/",
   },
+  {
+    id: 8,
+    title: "Chat with abhin",
+    description:
+      "A simple real-time chatting application built with React, Node.js, and MongoDB. Features user authentication, real-time messaging, and online status.",
+    image: IMG7,
+    tags: ["React", "Node.js", "agent-chat", "websocket"],
+    github: "https://github.com/abhin333/chatapplication",
+    demo: "https://chatwithabi.netlify.app/",
+  },
 ];
 
 const TAG_COLORS: Record<string, string> = {
-  "React": "#22d3ee",
+  React: "#22d3ee",
   "Next.js": "#94a3b8",
   "Node.js": "#22c55e",
-  "MongoDB": "#22c55e",
-  "Express": "#f59e0b",
-  "Firebase": "#fb923c",
-  "TypeScript": "#3b82f6",
+  MongoDB: "#22c55e",
+  Express: "#f59e0b",
+  Firebase: "#fb923c",
+  TypeScript: "#3b82f6",
   "TMDB API": "#f472b6",
-  "Firestore": "#fb923c",
-  "PWA": "#a855f7",
-  "Axios": "#818cf8",
-  "CSS": "#38bdf8",
-  "HTML": "#f97316",
-  "JavaScript": "#facc15",
+  Firestore: "#fb923c",
+  PWA: "#a855f7",
+  Axios: "#818cf8",
+  CSS: "#38bdf8",
+  HTML: "#f97316",
+  JavaScript: "#facc15",
   "Firebase Auth": "#fb923c",
-  "Docker": "#38bdf8",
+  Docker: "#38bdf8",
 };
 
 const Portfolio = () => {
@@ -125,8 +136,16 @@ const Portfolio = () => {
           <h2 className="section-title">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p style={{ color: "#94a3b8", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-            A showcase of real-world applications I&apos;ve designed and built — from MVPs to full-stack platforms.
+          <p
+            style={{
+              color: "#94a3b8",
+              marginTop: "1rem",
+              maxWidth: "500px",
+              margin: "1rem auto 0",
+            }}
+          >
+            A showcase of real-world applications I&apos;ve designed and built —
+            from MVPs to full-stack platforms.
           </p>
         </motion.div>
 
@@ -149,17 +168,30 @@ const Portfolio = () => {
                 background: "rgba(10, 22, 40, 0.7)",
                 backdropFilter: "blur(16px)",
                 border: "1px solid",
-                borderColor: hoveredId === project.id ? "rgba(34,211,238,0.4)" : "rgba(34,211,238,0.12)",
+                borderColor:
+                  hoveredId === project.id
+                    ? "rgba(34,211,238,0.4)"
+                    : "rgba(34,211,238,0.12)",
                 borderRadius: "20px",
                 overflow: "hidden",
                 transition: "all 0.4s ease",
-                boxShadow: hoveredId === project.id ? "0 0 40px rgba(34,211,238,0.15)" : "none",
+                boxShadow:
+                  hoveredId === project.id
+                    ? "0 0 40px rgba(34,211,238,0.15)"
+                    : "none",
                 flexDirection: i % 2 === 0 ? "row" : "row-reverse",
               }}
               className={`featured-card ${i % 2 !== 0 ? "reverse" : ""}`}
             >
               {/* Image */}
-              <div style={{ position: "relative", height: "300px", overflow: "hidden" }} className={i % 2 !== 0 ? "order-2" : ""}>
+              <div
+                style={{
+                  position: "relative",
+                  height: "300px",
+                  overflow: "hidden",
+                }}
+                className={i % 2 !== 0 ? "order-2" : ""}
+              >
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -167,7 +199,8 @@ const Portfolio = () => {
                   style={{
                     objectFit: "cover",
                     transition: "transform 0.6s ease",
-                    transform: hoveredId === project.id ? "scale(1.06)" : "scale(1)",
+                    transform:
+                      hoveredId === project.id ? "scale(1.06)" : "scale(1)",
                   }}
                 />
                 <div
@@ -180,17 +213,51 @@ const Portfolio = () => {
               </div>
 
               {/* Content */}
-              <div style={{ padding: "2.5rem", display: "flex", flexDirection: "column", justifyContent: "center", gap: "1rem" }} className={i % 2 !== 0 ? "order-1" : ""}>
-                <span style={{ fontSize: "0.75rem", color: "#22d3ee", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              <div
+                style={{
+                  padding: "2.5rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  gap: "1rem",
+                }}
+                className={i % 2 !== 0 ? "order-1" : ""}
+              >
+                <span
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "#22d3ee",
+                    fontWeight: 600,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                  }}
+                >
                   ⭐ Featured Project
                 </span>
-                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.5rem", fontWeight: 700, color: "#f0f9ff", margin: 0 }}>
+                <h3
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "1.5rem",
+                    fontWeight: 700,
+                    color: "#f0f9ff",
+                    margin: 0,
+                  }}
+                >
                   {project.title}
                 </h3>
-                <p style={{ color: "#94a3b8", lineHeight: 1.7, margin: 0, fontSize: "0.9rem" }}>
+                <p
+                  style={{
+                    color: "#94a3b8",
+                    lineHeight: 1.7,
+                    margin: 0,
+                    fontSize: "0.9rem",
+                  }}
+                >
                   {project.description}
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                <div
+                  style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}
+                >
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -210,10 +277,22 @@ const Portfolio = () => {
                   ))}
                 </div>
                 <div style={{ display: "flex", gap: "0.75rem" }}>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: "0.5rem 1.1rem", fontSize: "0.82rem" }}>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline"
+                    style={{ padding: "0.5rem 1.1rem", fontSize: "0.82rem" }}
+                  >
                     <FaGithub size={15} /> GitHub
                   </a>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.5rem 1.1rem", fontSize: "0.82rem" }}>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    style={{ padding: "0.5rem 1.1rem", fontSize: "0.82rem" }}
+                  >
                     <HiExternalLink size={15} /> Live Demo
                   </a>
                 </div>
@@ -244,15 +323,27 @@ const Portfolio = () => {
                 background: "rgba(10, 22, 40, 0.7)",
                 backdropFilter: "blur(16px)",
                 border: "1px solid",
-                borderColor: hoveredId === project.id ? "rgba(34,211,238,0.4)" : "rgba(34,211,238,0.12)",
+                borderColor:
+                  hoveredId === project.id
+                    ? "rgba(34,211,238,0.4)"
+                    : "rgba(34,211,238,0.12)",
                 borderRadius: "16px",
                 overflow: "hidden",
                 transition: "all 0.3s ease",
-                boxShadow: hoveredId === project.id ? "0 0 30px rgba(34,211,238,0.12), 0 20px 40px rgba(0,0,0,0.4)" : "none",
+                boxShadow:
+                  hoveredId === project.id
+                    ? "0 0 30px rgba(34,211,238,0.12), 0 20px 40px rgba(0,0,0,0.4)"
+                    : "none",
               }}
             >
               {/* Image */}
-              <div style={{ position: "relative", height: "180px", overflow: "hidden" }}>
+              <div
+                style={{
+                  position: "relative",
+                  height: "180px",
+                  overflow: "hidden",
+                }}
+              >
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -260,21 +351,57 @@ const Portfolio = () => {
                   style={{
                     objectFit: "cover",
                     transition: "transform 0.5s ease",
-                    transform: hoveredId === project.id ? "scale(1.08)" : "scale(1)",
+                    transform:
+                      hoveredId === project.id ? "scale(1.08)" : "scale(1)",
                   }}
                 />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 40%, rgba(10,22,40,0.9) 100%)" }} />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, transparent 40%, rgba(10,22,40,0.9) 100%)",
+                  }}
+                />
               </div>
 
               {/* Content */}
-              <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "#f0f9ff", margin: 0 }}>
+              <div
+                style={{
+                  padding: "1.5rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.75rem",
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "1.05rem",
+                    fontWeight: 700,
+                    color: "#f0f9ff",
+                    margin: 0,
+                  }}
+                >
                   {project.title}
                 </h3>
-                <p style={{ color: "#94a3b8", lineHeight: 1.65, margin: 0, fontSize: "0.85rem", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                <p
+                  style={{
+                    color: "#94a3b8",
+                    lineHeight: 1.65,
+                    margin: 0,
+                    fontSize: "0.85rem",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
                   {project.description}
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
+                <div
+                  style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}
+                >
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -292,11 +419,39 @@ const Portfolio = () => {
                     </span>
                   ))}
                 </div>
-                <div style={{ display: "flex", gap: "0.6rem", marginTop: "0.25rem" }}>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: "0.45rem 0.9rem", fontSize: "0.78rem", flex: 1, justifyContent: "center" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "0.6rem",
+                    marginTop: "0.25rem",
+                  }}
+                >
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline"
+                    style={{
+                      padding: "0.45rem 0.9rem",
+                      fontSize: "0.78rem",
+                      flex: 1,
+                      justifyContent: "center",
+                    }}
+                  >
                     <FaGithub size={14} /> GitHub
                   </a>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: "0.45rem 0.9rem", fontSize: "0.78rem", flex: 1, justifyContent: "center" }}>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    style={{
+                      padding: "0.45rem 0.9rem",
+                      fontSize: "0.78rem",
+                      flex: 1,
+                      justifyContent: "center",
+                    }}
+                  >
                     <HiExternalLink size={14} /> Demo
                   </a>
                 </div>
