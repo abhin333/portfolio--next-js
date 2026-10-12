@@ -23,7 +23,7 @@ const SOCIALS = [
     label: "GitHub",
   },
   {
-    href: "https://linkedin.com/in/abhin",
+    href: "https://www.linkedin.com/in/abhin-v-974252215/",
     icon: <FaLinkedinIn size={18} />,
     label: "LinkedIn",
   },
