@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Me from "../../../public/assets/me-about.jpeg";
@@ -14,12 +14,15 @@ const STATS = [
   { icon: <FaCode size={22} />, label: "Projects", value: "10+" },
 ];
 
-const fadeInUp = {
+// Typed as Variants so `ease` is checked as a cubic-bezier tuple, not number[]
+const EASE_OUT: [number, number, number, number] = [0.4, 0, 0.2, 1];
+
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: [0.4, 0, 0.2, 1] },
+    transition: { duration: 0.6, delay: i * 0.12, ease: EASE_OUT },
   }),
 };
 
@@ -56,7 +59,7 @@ const About = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.8, ease: EASE_OUT }}
             style={{ display: "flex", justifyContent: "center" }}
           >
             <div style={{ position: "relative" }}>
@@ -96,7 +99,11 @@ const About = () => {
               {/* Floating badge */}
               <motion.div
                 animate={{ y: [-8, 8, -8] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 4,
+                  ease: "easeInOut",
+                }}
                 style={{
                   position: "absolute",
                   bottom: "-10px",
@@ -134,10 +141,16 @@ const About = () => {
           </motion.div>
 
           {/* Content Column */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
+          >
             {/* Stats */}
             <motion.div
-              style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem" }}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: "1rem",
+              }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -154,7 +167,14 @@ const About = () => {
                     cursor: "default",
                   }}
                 >
-                  <div style={{ color: "#22d3ee", marginBottom: "0.5rem", display: "flex", justifyContent: "center" }}>
+                  <div
+                    style={{
+                      color: "#22d3ee",
+                      marginBottom: "0.5rem",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
                     {stat.icon}
                   </div>
                   <p
@@ -168,7 +188,13 @@ const About = () => {
                   >
                     {stat.value}
                   </p>
-                  <p style={{ fontSize: "0.78rem", color: "#94a3b8", margin: "0.2rem 0 0" }}>
+                  <p
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "#94a3b8",
+                      margin: "0.2rem 0 0",
+                    }}
+                  >
                     {stat.label}
                   </p>
                 </motion.div>
@@ -190,9 +216,11 @@ const About = () => {
                   marginBottom: "1rem",
                 }}
               >
-                I&apos;m a passionate Full-Stack Web Developer with over 1 year of professional experience building
-                modern, high-performance web applications. I specialize in crafting seamless user experiences
-                using React, Next.js, and Node.js — with a strong eye for design and detail.
+                I&apos;m a passionate Full-Stack Web Developer with over 1 year
+                of professional experience building modern, high-performance web
+                applications. I specialize in crafting seamless user experiences
+                using React, Next.js, and Node.js — with a strong eye for design
+                and detail.
               </p>
               <p
                 style={{
@@ -201,10 +229,13 @@ const About = () => {
                   fontSize: "1rem",
                 }}
               >
-                From responsive front-ends to robust back-end APIs, I love turning complex problems into
-                elegant, scalable solutions. Currently working at{" "}
-                <span style={{ color: "#22d3ee", fontWeight: 600 }}>Tiqr Events</span>, building next-generation
-                event management platforms.
+                From responsive front-ends to robust back-end APIs, I love
+                turning complex problems into elegant, scalable solutions.
+                Currently working at{" "}
+                <span style={{ color: "#22d3ee", fontWeight: 600 }}>
+                  Tiqr Events
+                </span>
+                , building next-generation event management platforms.
               </p>
             </motion.div>
 

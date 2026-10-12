@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiX, HiPaperAirplane } from "react-icons/hi";
 import { BsChatDotsFill } from "react-icons/bs";
-import { RiRobot2Line } from "react-icons/ri";
+import { RiRobotLine } from "react-icons/ri";
 
 type Message = {
   id: string;
@@ -14,27 +14,44 @@ type Message = {
 };
 
 const BOT_RESPONSES: Record<string, string> = {
-  default: "Thanks for reaching out! I'm Abhin's portfolio assistant. You can ask me about his skills, projects, or how to get in touch.",
-  skills: "Abhin is proficient in **Next.js, React, TypeScript, Node.js, MongoDB, Firebase**, and more. He's experienced with both frontend and backend development.",
-  projects: "Abhin has built several projects including:\n• **Easy Food** — MERN stack food ordering app\n• **Netflix Clone** — with TMDB API integration\n• **OLX Clone** — Firebase-powered classifieds\n• **Movie App** — with advanced search & filters",
-  contact: "You can reach Abhin at **abhinpradeepan123@gmail.com** or through the contact form on this page. He usually responds within 24 hours!",
-  experience: "Abhin has 1+ year of professional experience, having worked at **Kiebot** (4 months) and currently at **Tiqr Events** (2024–Present) as a Full-Stack Developer.",
-  hello: "Hey there! 👋 I'm Abhin's AI assistant. How can I help you today? Ask me about his skills, projects, or contact info!",
+  default:
+    "Thanks for reaching out! I'm Abhin's portfolio assistant. You can ask me about his skills, projects, or how to get in touch.",
+  skills:
+    "Abhin is proficient in **Next.js, React, TypeScript, Node.js, MongoDB, Firebase**, and more. He's experienced with both frontend and backend development.",
+  projects:
+    "Abhin has built several projects including:\n• **Easy Food** — MERN stack food ordering app\n• **Netflix Clone** — with TMDB API integration\n• **OLX Clone** — Firebase-powered classifieds\n• **Movie App** — with advanced search & filters",
+  contact:
+    "You can reach Abhin at **abhinpradeepan123@gmail.com** or through the contact form on this page. He usually responds within 24 hours!",
+  experience:
+    "Abhin has 1+ year of professional experience, having worked at **Kiebot** (4 months) and currently at **Tiqr Events** (2024–Present) as a Full-Stack Developer.",
+  hello:
+    "Hey there! 👋 I'm Abhin's AI assistant. How can I help you today? Ask me about his skills, projects, or contact info!",
   hire: "Abhin is currently **available for freelance projects and full-time roles**! Check out his resume or send him a message through the contact section.",
 };
 
 function getResponse(input: string): string {
   const lower = input.toLowerCase();
-  if (lower.match(/\b(hi|hello|hey|greetings|howdy)\b/)) return BOT_RESPONSES.hello;
-  if (lower.match(/\b(skill|tech|stack|framework|language|know|use)\b/)) return BOT_RESPONSES.skills;
-  if (lower.match(/\b(project|portfolio|work|built|made|app)\b/)) return BOT_RESPONSES.projects;
-  if (lower.match(/\b(contact|email|reach|touch|message|talk)\b/)) return BOT_RESPONSES.contact;
-  if (lower.match(/\b(experience|work|job|company|employer|intern)\b/)) return BOT_RESPONSES.experience;
-  if (lower.match(/\b(hire|available|freelance|open|opportunity|position)\b/)) return BOT_RESPONSES.hire;
+  if (lower.match(/\b(hi|hello|hey|greetings|howdy)\b/))
+    return BOT_RESPONSES.hello;
+  if (lower.match(/\b(skill|tech|stack|framework|language|know|use)\b/))
+    return BOT_RESPONSES.skills;
+  if (lower.match(/\b(project|portfolio|work|built|made|app)\b/))
+    return BOT_RESPONSES.projects;
+  if (lower.match(/\b(contact|email|reach|touch|message|talk)\b/))
+    return BOT_RESPONSES.contact;
+  if (lower.match(/\b(experience|work|job|company|employer|intern)\b/))
+    return BOT_RESPONSES.experience;
+  if (lower.match(/\b(hire|available|freelance|open|opportunity|position)\b/))
+    return BOT_RESPONSES.hire;
   return BOT_RESPONSES.default;
 }
 
-const QUICK_REPLIES = ["Skills & Tech Stack", "Projects", "Contact Info", "Available for hire?"];
+const QUICK_REPLIES = [
+  "Skills & Tech Stack",
+  "Projects",
+  "Contact Info",
+  "Available for hire?",
+];
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -116,14 +133,16 @@ const ChatWidget = () => {
               flexDirection: "column",
               overflow: "hidden",
               zIndex: 998,
-              boxShadow: "0 25px 80px rgba(0,0,0,0.7), 0 0 40px rgba(34,211,238,0.1)",
+              boxShadow:
+                "0 25px 80px rgba(0,0,0,0.7), 0 0 40px rgba(34,211,238,0.1)",
             }}
           >
             {/* Header */}
             <div
               style={{
                 padding: "1rem 1.25rem",
-                background: "linear-gradient(135deg, rgba(34,211,238,0.12), rgba(168,85,247,0.08))",
+                background:
+                  "linear-gradient(135deg, rgba(34,211,238,0.12), rgba(168,85,247,0.08))",
                 borderBottom: "1px solid rgba(34,211,238,0.15)",
                 display: "flex",
                 alignItems: "center",
@@ -143,15 +162,44 @@ const ChatWidget = () => {
                   flexShrink: 0,
                 }}
               >
-                <RiRobot2Line size={20} />
+                <RiRobotLine size={20} />
               </div>
               <div style={{ flex: 1 }}>
-                <p style={{ margin: 0, fontWeight: 700, color: "#f0f9ff", fontSize: "0.95rem" }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontWeight: 700,
+                    color: "#f0f9ff",
+                    fontSize: "0.95rem",
+                  }}
+                >
                   Portfolio Assistant
                 </p>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
-                  <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#22c55e", display: "inline-block" }} />
-                  <span style={{ color: "#22c55e", fontSize: "0.72rem", fontWeight: 500 }}>Online — Ready to help</span>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "7px",
+                      height: "7px",
+                      borderRadius: "50%",
+                      background: "#22c55e",
+                      display: "inline-block",
+                    }}
+                  />
+                  <span
+                    style={{
+                      color: "#22c55e",
+                      fontSize: "0.72rem",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Online — Ready to help
+                  </span>
                 </div>
               </div>
               <button
@@ -166,8 +214,12 @@ const ChatWidget = () => {
                   display: "flex",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#f0f9ff")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#94a3b8")}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color = "#f0f9ff")
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color = "#94a3b8")
+                }
               >
                 <HiX size={20} />
               </button>
@@ -198,18 +250,41 @@ const ChatWidget = () => {
                   }}
                 >
                   {msg.role === "assistant" && (
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.25rem" }}>
-                      <div style={{ width: "20px", height: "20px", borderRadius: "6px", background: "linear-gradient(135deg, #22d3ee, #a855f7)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <RiRobot2Line size={12} color="#fff" />
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                        marginBottom: "0.25rem",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "6px",
+                          background:
+                            "linear-gradient(135deg, #22d3ee, #a855f7)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <RiRobotLine size={12} color="#fff" />
                       </div>
-                      <span style={{ fontSize: "0.7rem", color: "#475569" }}>Assistant • {formatTime(msg.timestamp)}</span>
+                      <span style={{ fontSize: "0.7rem", color: "#475569" }}>
+                        Assistant • {formatTime(msg.timestamp)}
+                      </span>
                     </div>
                   )}
                   <div
                     style={{
                       maxWidth: "85%",
                       padding: "0.7rem 1rem",
-                      borderRadius: msg.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
+                      borderRadius:
+                        msg.role === "user"
+                          ? "16px 16px 4px 16px"
+                          : "16px 16px 16px 4px",
                       background:
                         msg.role === "user"
                           ? "linear-gradient(135deg, #22d3ee, #06b6d4)"
@@ -217,7 +292,10 @@ const ChatWidget = () => {
                       color: msg.role === "user" ? "#020408" : "#e2e8f0",
                       fontSize: "0.88rem",
                       lineHeight: 1.6,
-                      border: msg.role === "assistant" ? "1px solid rgba(34,211,238,0.1)" : "none",
+                      border:
+                        msg.role === "assistant"
+                          ? "1px solid rgba(34,211,238,0.1)"
+                          : "none",
                       fontWeight: msg.role === "user" ? 600 : 400,
                       whiteSpace: "pre-wrap",
                     }}
@@ -225,7 +303,15 @@ const ChatWidget = () => {
                     {msg.text.replace(/\*\*(.*?)\*\*/g, "$1")}
                   </div>
                   {msg.role === "user" && (
-                    <span style={{ fontSize: "0.7rem", color: "#475569", marginTop: "0.2rem" }}>{formatTime(msg.timestamp)}</span>
+                    <span
+                      style={{
+                        fontSize: "0.7rem",
+                        color: "#475569",
+                        marginTop: "0.2rem",
+                      }}
+                    >
+                      {formatTime(msg.timestamp)}
+                    </span>
                   )}
                 </motion.div>
               ))}
@@ -235,18 +321,52 @@ const ChatWidget = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.4rem",
+                  }}
                 >
-                  <div style={{ width: "20px", height: "20px", borderRadius: "6px", background: "linear-gradient(135deg, #22d3ee, #a855f7)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <RiRobot2Line size={12} color="#fff" />
+                  <div
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      borderRadius: "6px",
+                      background: "linear-gradient(135deg, #22d3ee, #a855f7)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <RiRobotLine size={12} color="#fff" />
                   </div>
-                  <div style={{ padding: "0.6rem 0.9rem", background: "rgba(30,41,59,0.8)", border: "1px solid rgba(34,211,238,0.1)", borderRadius: "16px 16px 16px 4px", display: "flex", gap: "4px", alignItems: "center" }}>
+                  <div
+                    style={{
+                      padding: "0.6rem 0.9rem",
+                      background: "rgba(30,41,59,0.8)",
+                      border: "1px solid rgba(34,211,238,0.1)",
+                      borderRadius: "16px 16px 16px 4px",
+                      display: "flex",
+                      gap: "4px",
+                      alignItems: "center",
+                    }}
+                  >
                     {[0, 1, 2].map((i) => (
                       <motion.span
                         key={i}
                         animate={{ opacity: [0.3, 1, 0.3] }}
-                        transition={{ repeat: Infinity, duration: 1, delay: i * 0.2 }}
-                        style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22d3ee", display: "inline-block" }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 1,
+                          delay: i * 0.2,
+                        }}
+                        style={{
+                          width: "6px",
+                          height: "6px",
+                          borderRadius: "50%",
+                          background: "#22d3ee",
+                          display: "inline-block",
+                        }}
                       />
                     ))}
                   </div>
@@ -257,7 +377,14 @@ const ChatWidget = () => {
 
             {/* Quick Replies */}
             {messages.length <= 1 && (
-              <div style={{ padding: "0 1rem", display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+              <div
+                style={{
+                  padding: "0 1rem",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "0.5rem",
+                }}
+              >
                 {QUICK_REPLIES.map((qr) => (
                   <button
                     key={qr}
@@ -275,10 +402,12 @@ const ChatWidget = () => {
                       fontFamily: "inherit",
                     }}
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = "rgba(34,211,238,0.12)";
+                      (e.currentTarget as HTMLElement).style.background =
+                        "rgba(34,211,238,0.12)";
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = "rgba(34,211,238,0.06)";
+                      (e.currentTarget as HTMLElement).style.background =
+                        "rgba(34,211,238,0.06)";
                     }}
                   >
                     {qr}
@@ -289,7 +418,10 @@ const ChatWidget = () => {
 
             {/* Input */}
             <form
-              onSubmit={(e) => { e.preventDefault(); sendMessage(); }}
+              onSubmit={(e) => {
+                e.preventDefault();
+                sendMessage();
+              }}
               style={{
                 padding: "0.75rem 1rem",
                 borderTop: "1px solid rgba(34,211,238,0.1)",
@@ -314,8 +446,12 @@ const ChatWidget = () => {
                   fontFamily: "inherit",
                   transition: "border-color 0.2s",
                 }}
-                onFocus={(e) => (e.target.style.borderColor = "rgba(34,211,238,0.5)")}
-                onBlur={(e) => (e.target.style.borderColor = "rgba(34,211,238,0.2)")}
+                onFocus={(e) =>
+                  (e.target.style.borderColor = "rgba(34,211,238,0.5)")
+                }
+                onBlur={(e) =>
+                  (e.target.style.borderColor = "rgba(34,211,238,0.2)")
+                }
               />
               <motion.button
                 type="submit"
@@ -326,7 +462,9 @@ const ChatWidget = () => {
                   width: "40px",
                   height: "40px",
                   borderRadius: "12px",
-                  background: input.trim() ? "linear-gradient(135deg, #22d3ee, #06b6d4)" : "rgba(34,211,238,0.1)",
+                  background: input.trim()
+                    ? "linear-gradient(135deg, #22d3ee, #06b6d4)"
+                    : "rgba(34,211,238,0.1)",
                   border: "none",
                   cursor: input.trim() ? "pointer" : "not-allowed",
                   color: input.trim() ? "#020408" : "#475569",
@@ -337,7 +475,10 @@ const ChatWidget = () => {
                   transition: "all 0.2s",
                 }}
               >
-                <HiPaperAirplane size={18} style={{ transform: "rotate(90deg)" }} />
+                <HiPaperAirplane
+                  size={18}
+                  style={{ transform: "rotate(90deg)" }}
+                />
               </motion.button>
             </form>
           </motion.div>
@@ -367,17 +508,30 @@ const ChatWidget = () => {
           alignItems: "center",
           justifyContent: "center",
           zIndex: 999,
-          boxShadow: "0 8px 30px rgba(34,211,238,0.4), 0 0 60px rgba(34,211,238,0.15)",
+          boxShadow:
+            "0 8px 30px rgba(34,211,238,0.4), 0 0 60px rgba(34,211,238,0.15)",
         }}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
-            <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
+            <motion.div
+              key="close"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.15 }}
+            >
               <HiX size={24} />
             </motion.div>
           ) : (
-            <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
+            <motion.div
+              key="open"
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
+              transition={{ duration: 0.15 }}
+            >
               <BsChatDotsFill size={22} />
             </motion.div>
           )}
