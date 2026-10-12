@@ -8,15 +8,14 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true, // ⬅️ RECOMMENDED CHANGE: Set to true
+    "strict": true,
     "noEmit": true,
     "incremental": true,
     "module": "esnext",
     "esModuleInterop": true,
-    "moduleResolution": "bundler", // ⬅️ RECOMMENDED CHANGE: Set to "bundler"
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "tsx": "react-tsx",
     "plugins": [
       {
         "name": "next"
