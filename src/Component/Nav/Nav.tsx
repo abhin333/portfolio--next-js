@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 import { BiBook, BiMessageSquareDetail } from "react-icons/bi";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { BsSoundwave } from "react-icons/bs";
 
 const navItems = [
   { href: "#hero", label: "Home", icon: <AiOutlineHome size={18} /> },
@@ -132,6 +133,38 @@ const Nav = () => {
         >
           Resume
         </a>
+
+        {/* AI Audio Guide Button */}
+        <button
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              window.dispatchEvent(
+                new CustomEvent("trigger-ai-audio", {
+                  detail: { prompt: "introduce" },
+                })
+              );
+            }
+          }}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            padding: "0.4rem 0.85rem",
+            borderRadius: "50px",
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            background: "rgba(34,211,238,0.12)",
+            border: "1px solid rgba(34,211,238,0.35)",
+            color: "#22d3ee",
+            cursor: "pointer",
+            marginLeft: "0.25rem",
+            transition: "all 0.2s ease",
+          }}
+          title="Start AI Voice Guide"
+        >
+          <BsSoundwave size={15} />
+          <span>AI Audio</span>
+        </button>
       </motion.nav>
 
       {/* Mobile Menu Button */}
@@ -225,6 +258,45 @@ const Nav = () => {
                 </Link>
               </motion.div>
             ))}
+
+            {/* Mobile AI Voice Guide Button */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              style={{ marginTop: "1rem" }}
+            >
+              <button
+                onClick={() => {
+                  setMobileOpen(false);
+                  if (typeof window !== "undefined") {
+                    window.dispatchEvent(
+                      new CustomEvent("trigger-ai-audio", {
+                        detail: { prompt: "introduce" },
+                      })
+                    );
+                  }
+                }}
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  padding: "0.9rem 1.25rem",
+                  borderRadius: "12px",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  background:
+                    "linear-gradient(135deg, rgba(34,211,238,0.2), rgba(168,85,247,0.2))",
+                  border: "1px solid rgba(34,211,238,0.4)",
+                  color: "#22d3ee",
+                  cursor: "pointer",
+                }}
+              >
+                <BsSoundwave size={20} />
+                <span>🎙️ AI Audio Guide</span>
+              </button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

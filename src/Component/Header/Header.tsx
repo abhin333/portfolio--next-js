@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { HiArrowDown, HiExternalLink } from "react-icons/hi";
-import { BsCodeSlash } from "react-icons/bs";
+import { BsCodeSlash, BsSoundwave } from "react-icons/bs";
 
 const SOCIAL_LINKS = [
   {
@@ -316,6 +316,50 @@ const Header = () => {
             <MdEmail size={16} />
             Contact Me
           </Link>
+          <button
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(
+                  new CustomEvent("trigger-ai-audio", {
+                    detail: { prompt: "introduce" },
+                  })
+                );
+              }
+            }}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.55rem",
+              padding: "0.75rem 1.6rem",
+              background:
+                "linear-gradient(135deg, rgba(34,211,238,0.18), rgba(168,85,247,0.22))",
+              border: "1px solid rgba(34, 211, 238, 0.45)",
+              borderRadius: "50px",
+              color: "#22d3ee",
+              fontWeight: 700,
+              fontSize: "0.9rem",
+              cursor: "pointer",
+              boxShadow: "0 0 25px rgba(34,211,238,0.25)",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background =
+                "linear-gradient(135deg, rgba(34,211,238,0.3), rgba(168,85,247,0.35))";
+              (e.currentTarget as HTMLElement).style.boxShadow =
+                "0 0 35px rgba(34,211,238,0.45)";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background =
+                "linear-gradient(135deg, rgba(34,211,238,0.18), rgba(168,85,247,0.22))";
+              (e.currentTarget as HTMLElement).style.boxShadow =
+                "0 0 25px rgba(34,211,238,0.25)";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+            }}
+          >
+            <BsSoundwave size={18} />
+            <span>🎙️ AI Audio Intro</span>
+          </button>
         </motion.div>
 
         {/* Social Icons */}

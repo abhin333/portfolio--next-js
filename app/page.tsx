@@ -8,6 +8,7 @@ import Portfolio from "../src/Component/Portfolio/Portfolio";
 import Contact from "../src/Component/Contact/Contact";
 import Footer from "../src/Component/Footer/Footer";
 import ChatWidget from "./chat/page";
+import AudioAssistant from "../src/Component/AudioAssistant/AudioAssistant";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <AudioAssistant />
       <ChatWidget />
     </>
   );
