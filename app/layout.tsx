@@ -23,11 +23,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  // Set the base URL for relative image and canonical link resolutions
   metadataBase: new URL("https://abhin-portfolio.netlify.app"),
-  title: "Abhin.v — Full-Stack Web Developer",
+  title: "Abhin|Portfolio|front-end-developer",
   description:
-    "Portfolio of Abhin.v — Full-Stack Web Developer specializing in Next.js, React, TypeScript, and Node.js. Building fast, interactive, and scalable web experiences.",
+    "Portfolio of Abhin|Portfolio|front-end-developer specializing in Next.js, React, TypeScript, and Node.js. Building fast, interactive, and scalable web experiences.",
   keywords: [
     "Next.js developer",
     "React developer",
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Abhin.v — Full-Stack Web Developer",
+    title: "Abhin|Portfolio|front-end-developer",
     description: "Crafting Fast, Interactive & Scalable Web Experiences.",
     url: "https://abhin-portfolio.netlify.app",
     siteName: "Abhin.v Portfolio",
@@ -53,13 +52,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg", // Place an og-image.jpg in your public folder
         width: 1200,
         height: 630,
-        alt: "Abhin.v — Full-Stack Web Developer Portfolio",
+        alt: "Abhin|Portfolio|front-end-developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abhin.v — Full-Stack Web Developer",
+    title: "Abhin|Portfolio|front-end-developer",
     description: "Crafting Fast, Interactive & Scalable Web Experiences.",
     images: ["/og-image.jpg"],
   },
