@@ -23,7 +23,7 @@ export default function HomePage() {
       </main>
       <Footer />
       <AudioAssistant />
-      <ChatWidget />
+      {/* <ChatWidget /> */}
     </>
   );
 }
