@@ -4,7 +4,7 @@ import React from "react";
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Me from "../../../public/assets/me-about.jpeg";
+import Me from "../../../public/assets/me-about.png";
 import { FaAward, FaUsers, FaCode } from "react-icons/fa";
 import { HiArrowRight } from "react-icons/hi";
 
