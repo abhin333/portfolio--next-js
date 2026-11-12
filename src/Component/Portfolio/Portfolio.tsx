@@ -17,7 +17,7 @@ import IMG7 from "../../../public/assets/chatwithabi.png";
 const PROJECTS = [
   {
     id: 1,
-    title: "Easy Food — MERN Stack",
+    title: "Easy Food — MERN Stack mobile view only",
     description:
       "A full-stack food ordering application built with MongoDB, Express, React, and Node.js. Features real-time cart updates, user authentication, and order tracking.",
     image: IMG2,
@@ -28,7 +28,7 @@ const PROJECTS = [
   },
   {
     id: 2,
-    title: "Easy Food — React & Firebase",
+    title: "Easy Food — React & Firebase mobile view only",
     description:
       "Mobile-first food ordering PWA with Firebase backend, real-time database sync, and Google Authentication for seamless user experience.",
     image: IMG2,
